@@ -1,0 +1,5 @@
+2D Matrix Embedding with Multi-hop Attention: The model uses a 2D matrix to represent a sentence, where each row focuses on different parts of the sentence, and applies multiple passes of attention to capture various important components. This improves the ability to represent complex sentences with multiple semantic aspects.
+
+Attention Regularization: A regularization term ensures attention is distributed evenly across the sentence, preventing over-focus on a single part, leading to a better overall representation.
+
+Embedding Visualization: The 2D matrix format allows for visualization, making the model more interpretable by showing which parts of the sentence are encoded in the embedding, useful for tasks like sentiment analysis and text classification.
