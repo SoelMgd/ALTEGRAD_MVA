@@ -1,14 +1,12 @@
 Q1/
 
-2D Matrix Embedding: The model uses a 2D matrix to represent a sentence, where each row focuses on different parts of the sentence, and applies multiple passes of attention to capture various important components. This improves the ability to represent complex sentences with multiple semantic aspects.
-
-Attention Regularization: A regularization term ensures attention is distributed evenly across the sentence, preventing over-focus on a single part, leading to a better overall representation.
-
-Embedding Visualization: The 2D matrix format allows for visualization, making the model more interpretable by showing which parts of the sentence are encoded in the embedding, useful for tasks like sentiment analysis and text classification.
+The basic self-attention mechanism can be improved by representing the sentence embedding in a 2D matrix instead of a simple vector.
+The paper uses a 2D matrix to represent a sentence, where each row focuses on different parts of the sentence, and applies multiple passes of attention to capture various important components. This enables to represent sentences with multiple semantic aspects.
+A regularization term is introduced to ensure that attention is distributed in different parts of the sentence, preventing over-focus on a single part.
+This 2D matrix also allos to an helpfull visualization making the model more interpretable by showing which parts of the sentence are encoded in the embedding. This can be useful for tasks like sentiment analysis and text classification.
 
 Q2/
 The main motivations for replacing recurrent operations with self-attention are computational complexity and better long-range dependencies.
 
 Recurrent models like RNN process sequences step by step, limiting parallelization since each step depends on the previous one. The sequentials operations are in O(n) whereas for Self-Attention layers there are constant (O(1)). Therefore, self-attention layers are faster than recurrent layers when the sequence length is smaller than the representation dimensionality. Self-attention layers in Transformers offer significant advantages in parallelization, the attention operations are essentially matrix products with the Query, Key and Value matrices and these calculations can easily be optimised for the GPU. 
-
 Recurrent models struggle to capture long-range dependencies due to their sequential nature. Self-attention overcomes this by allowing each token in the sequence to directly attend to every other token, enabling the model to capture long-range relationships more effectively. The path length—the number of operations required to connect two distant tokens—is in self-attention is constant (O(1)) whereas a recurrent layer requires O(n) sequential operations. This makes it easier to capture long range dependencies.
